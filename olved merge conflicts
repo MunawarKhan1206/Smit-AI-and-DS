@@ -1,0 +1,192 @@
+[1mdiff --cc Munawar-Khan-801004-Assignment-5- Python_OOPs_Assignment.ipynb[m
+[1mindex e85bd85,4295f08..0000000[m
+[1m--- a/Munawar-Khan-801004-Assignment-5- Python_OOPs_Assignment.ipynb[m
+[1m+++ b/Munawar-Khan-801004-Assignment-5- Python_OOPs_Assignment.ipynb[m
+[36m@@@ -1,4 -1,708 +1,712 @@@[m
+[32m++<<<<<<< HEAD[m
+[32m +    "obj = ElectricCar()\n",[m
+[32m++=======[m
+[32m+ {[m
+[32m+  "cells": [[m
+[32m+   {[m
+[32m+    "cell_type": "markdown",[m
+[32m+    "metadata": {},[m
+[32m+    "source": [[m
+[32m+     "# Python Object-Oriented Programming (OOPs) Assignment"[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "markdown",[m
+[32m+    "metadata": {},[m
+[32m+    "source": [[m
+[32m+     "**Q1:** Aik `Student` class banayein jismein `name` aur `roll_number` private variables (`__`) hon. In variables ko access aur modify karne ke liye getter aur setter methods likhein."[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "code",[m
+[32m+    "execution_count": 21,[m
+[32m+    "metadata": {},[m
+[32m+    "outputs": [[m
+[32m+     {[m
+[32m+      "name": "stdout",[m
+[32m+      "output_type": "stream",[m
+[32m+      "text": [[m
+[32m+       "Your name is Munawar Khan and roll number is 801004\n"[m
+[32m+      ][m
+[32m+     },[m
+[32m+     {[m
+[32m+      "data": {[m
+[32m+       "text/plain": [[m
+[32m+        "401"[m
+[32m+       ][m
+[32m+      },[m
+[32m+      "execution_count": 21,[m
+[32m+      "metadata": {},[m
+[32m+      "output_type": "execute_result"[m
+[32m+     }[m
+[32m+    ],[m
+[32m+    "source": [[m
+[32m+     "class Student:\n",[m
+[32m+     "    def __init__(self,name,roll_number):\n",[m
+[32m+     "        self. __name = name\n",[m
+[32m+     "        self. __roll_number = roll_number\n",[m
+[32m+     "    def get_name(self):\n",[m
+[32m+     "        return self. __name\n",[m
+[32m+     "    def set_name(self,new_name):\n",[m
+[32m+     "        self. __name = new_name\n",[m
+[32m+     "    def get_roll_number(self):\n",[m
+[32m+     "        return self. __roll_number\n",[m
+[32m+     "    def set_roll_number(self,new_roll_number):\n",[m
+[32m+     "        self. __roll_number = new_roll_number\n",[m
+[32m+     "    def show(self):\n",[m
+[32m+     "        print(f\"Your name is {self.__name} and roll number is {self. __roll_number}\")\n",[m
+[32m+     "obj = Student(\"Munawar Khan\",\"801004\")\n",[m
+[32m+     "obj.show()\n",[m
+[32m+     "obj.get_name()\n",[m
+[32m+     "obj.set_name(\"Saim Raza\")\n",[m
+[32m+     "obj.get_name()\n",[m
+[32m+     "obj.set_roll_number(401)\n",[m
+[32m+     "obj.get_roll_number()\n"[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "markdown",[m
+[32m+    "metadata": {},[m
+[32m+    "source": [[m
+[32m+     "**Q2:** Aik `BankAccount` class banayein jismein `__balance` private variable ho. Aik `deposit()` aur aik `withdraw()` method banayein, check karein ke withdraw karte waqt balance zero se kam na ho."[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "code",[m
+[32m+    "execution_count": 22,[m
+[32m+    "metadata": {},[m
+[32m+    "outputs": [[m
+[32m+     {[m
+[32m+      "name": "stdout",[m
+[32m+      "output_type": "stream",[m
+[32m+      "text": [[m
+[32m+       "Amount Sucessfully deposited. Your new balance is 7000\n",[m
+[32m+       "Amount withdrawed. Your new balance is 4200\n",[m
+[32m+       "Amount withdrawed. Your new balance is 2900\n"[m
+[32m+      ][m
+[32m+     }[m
+[32m+    ],[m
+[32m+    "source": [[m
+[32m+     "class Account:\n",[m
+[32m+     "    def __init__(self,balance):\n",[m
+[32m+     "        self.__balance = balance\n",[m
+[32m+     "    def deposit(self,amount):\n",[m
+[32m+     "        if amount <= 0:\n",[m
+[32m+     "            print(\"Invalid Amount Entered\")\n",[m
+[32m+     "        else:\n",[m
+[32m+     "            self.__balance +=amount\n",[m
+[32m+     "            print(f\"Amount Sucessfully deposited. Your new balance is {self.__balance + amount}\")\n",[m
+[32m+     "    def withdraw(self,amount):\n",[m
+[32m+     "        if amount > self.__balance:\n",[m
+[32m+     "            print(\"Insufficent amount is entered\")\n",[m
+[32m+     "        else:\n",[m
+[32m+     "            self.__balance -=amount\n",[m
+[32m+     "            print(f\"Amount withdrawed. Your new balance is {self.__balance - amount}\")\n",[m
+[32m+     "obj = Account(5000)\n",[m
+[32m+     "obj.deposit(1000)\n",[m
+[32m+     "obj.withdraw(900)\n",[m
+[32m+     "obj.withdraw(1100)\n",[m
+[32m+     "        "[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "markdown",[m
+[32m+    "metadata": {},[m
+[32m+    "source": [[m
+[32m+     "**Q3:** Aik class banayein `Employee` jismein salary private ho. Agar koi salary ko minus (negative) value set karne ki koshish kare, toh setter method 'Invalid Salary' ka error message show kare."[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "code",[m
+[32m+    "execution_count": 23,[m
+[32m+    "metadata": {},[m
+[32m+    "outputs": [[m
+[32m+     {[m
+[32m+      "ename": "SyntaxError",[m
+[32m+      "evalue": "leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers (3767556650.py, line 12)",[m
+[32m+      "output_type": "error",[m
+[32m+      "traceback": [[m
+[32m+       "  \u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[23]\u001b[39m\u001b[32m, line 12\u001b[39m\n\u001b[31m    \u001b[39m\u001b[31mobj = Employee(083)\u001b[39m\n                   ^\n\u001b[31mSyntaxError\u001b[39m\u001b[31m:\u001b[39m leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n"[m
+[32m+      ][m
+[32m+     }[m
+[32m+    ],[m
+[32m+    "source": [[m
+[32m+     "class Employee:\n",[m
+[32m+     "    def __init__(self,salary):\n",[m
+[32m+     "        self.__salary = salary\n",[m
+[32m+     "    def set_salary(self,new_salary):\n",[m
+[32m+     "        # self.__salary = new_salary\n",[m
+[32m+     "        if new_salary <= 0:\n",[m
+[32m+     "            print(\"Not possible\")\n",[m
+[32m+     "        self.__salary = new_salary\n",[m
+[32m+     "        print(\"New salary has been set\")\n",[m
+[32m+     "    def get_salary(self):\n",[m
+[32m+     "        return self.__salary\n",[m
+[32m+     "obj = Employee(083)\n",[m
+[32m+     "obj.set_salary(20000)\n",[m
+[32m+     "obj.get_salary()\n"[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "markdown",[m
+[32m+    "metadata": {},[m
+[32m+    "source": [[m
+[32m+     "**Q4:** Protected variable (`_`) aur Private variable (`__`) ke beech kya farq hota hai? Aik simple code ke zariye dono ka use-case dikhayein."[m
+[32m+    ][m
+[32m+   },[m
+[32m+   {[m
+[32m+    "cell_type": "code",[m
+[32m+    "execution_count": null,[m
+[32m+    "metadata": {},[m
+[32m+    "outputs": [[m
+[32m+     {[m
+[32m+      "name": "stdout",[m
+[32m+      "output_type": "stream",[m
+[32m+      "text": [[m
+[32m+       "Child node accessing protected: Protected Data\n",[m
+[32m+       "Child node cannot access private variable\n",[m
+[32m+       "\n",[m
+[32m+       "--- external node ---\n",[m
+[32m+       "external node accessing protected: Protected Data\n",[m
+[32m+       "Child node cannot access private variable\n",[m
+[32m+       "Accessing private node via Name Mangling: Private Data\n"[m
+[32m+      ][m
+[32m+     }[m
+[32m+    ],[m
+[32m+    "source": [[m
+[32m+     "class Parent:\n",[m
+[32m+     "    def __init__(self):\n",[m
+[32m+     "        self._protected_val = \"Protected Data\"  \n",[m
+[32m+     "        self.__private_val = \"Private Data\"     \n",[m
+[32m+     "class Child(Parent):\n",[m
+[32m+     "    def show_data(self):\n",[m
+[32m+     "        print(f\"Child node accessing protected: {self._protected_val}\") \n",[m
+[32m+     "        try:\n",[m
+[32m+     "            print(self.__private_val)\n",[m
+[32m+     "        except AttributeError:\n",[m
+[32m+     "            print(\"Child node ca
